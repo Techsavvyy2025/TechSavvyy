@@ -2,51 +2,49 @@
 <html lang="en">
 
 <head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TechSavvy</title>
-    <style>
-        /* Hide all tab content by default */
-        .tab-content {
-            display: none;
-        }
-
-        /* Show the active tab */
-        .active {
-            display: block;
-        }
-    </style>
+    <title>Techsavvy Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
-    <h1>TechSavvy</h1>
-
-    <!-- Navigation Tabs -->
-    <button class="tab-button" data-tab="home">Home</button>
-    <button class="tab-button" data-tab="achievements">Achievements</button>
-    <button class="tab-button" data-tab="settings">Settings</button>
-    <button class="tab-button" data-tab="dashboard">Dashboard</button>
-
-    <!-- Tab Content -->
-    <div id="home" class="tab-content active">
-        <h2>Home Page</h2>
-        <p>Welcome to TechSavvy!</p>
+    <div class="sidebar">
+        <div class="profile">
+            <img src="profile.jpg" alt="Profile Picture">
+            <h2>TECHSAVVY</h2>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#home" class="nav-link">🏠 Home</a></li>
+                <li><a href="#dashboard" class="nav-link">📊 Dashboard</a></li>
+                <li><a href="#achievements" class="nav-link">🏅 Achievements</a></li>
+                <li><a href="#settings" class="nav-link">⚙️ Settings</a></li>
+            </ul>
+        </nav>
     </div>
 
-    <div id="achievements" class="tab-content">
-        <h2>Achievements</h2>
-        <p>Your progress is shown here.</p>
-    </div>
-
-    <div id="settings" class="tab-content">
-        <h2>Settings</h2>
-        <p>Change your preferences here.</p>
-    </div>
-
-    <div id="dashboard" class="tab-content">
-        <h2>Dashboard</h2>
-        <p>View your analytics here.</p>
-    </div>
+    <main>
+        <section id="home" class="content active">
+            <h1>Welcome to Techsavvy</h1>
+        </section>
+        <section id="dashboard" class="content">
+            <h1>Dashboard</h1>
+            <div class="dashboard-grid">
+                <div class="card fade-in">📊 Stats</div>
+                <div class="card fade-in">🔥 Streaks</div>
+                <div class="card fade-in">🤖 AI Assistant</div>
+            </div>
+        </section>
+        <section id="achievements" class="content">
+            <h1>Your Achievements</h1>
+        </section>
+        <section id="settings" class="content">
+            <h1>Settings</h1>
+        </section>
+    </main>
 
     <script src="script.js"></script>
 </body>

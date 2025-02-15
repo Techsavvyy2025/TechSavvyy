@@ -1,21 +1,21 @@
-document.addEventListener("DOMContentLoaded", function () {
-    // Get all buttons
-    const buttons = document.querySelectorAll(".tab-button");
-    // Get all tab contents
-    const contents = document.querySelectorAll(".tab-content");
+document.addEventListener("DOMContentLoaded", () => {
+    const links = document.querySelectorAll(".nav-link");
+    const sections = document.querySelectorAll(".content");
 
-    // Add click event to each button
-    buttons.forEach(button => {
-        button.addEventListener("click", function () {
-            const tabId = this.getAttribute("data-tab");
+    links.forEach(link => {
+        link.addEventListener("click", (e) => {
+            e.preventDefault();
+            const targetId = link.getAttribute("href").substring(1);
+            const targetSection = document.getElementById(targetId);
 
-            // Hide all tab contents
-            contents.forEach(content => {
-                content.classList.remove("active");
-            });
+            sections.forEach(section => section.classList.remove("active"));
+            targetSection.classList.add("active");
 
-            // Show the selected tab
-            document.getElementById(tabId).classList.add("active");
+            // GSAP animation
+            gsap.fromTo(targetSection,
+                { opacity: 0, y: 20 },
+                { opacity: 1, y: 0, duration: 0.5 }
+            );
         });
     });
 });
