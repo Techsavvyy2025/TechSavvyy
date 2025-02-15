@@ -1,14 +1,21 @@
 document.addEventListener("DOMContentLoaded", function () {
-    const searchButton = document.getElementById("search-button");
-    const searchBox = document.getElementById("search-box");
+    // Get all buttons
+    const buttons = document.querySelectorAll(".tab-button");
+    // Get all tab contents
+    const contents = document.querySelectorAll(".tab-content");
 
-    searchButton.addEventListener("click", function () {
-        const query = searchBox.value.trim();
-        if (query) {
-            alert("Searching for: " + query);
-            // Here you can implement actual search logic or redirect
-        } else {
-            alert("Please enter a topic or course to search.");
-        }
+    // Add click event to each button
+    buttons.forEach(button => {
+        button.addEventListener("click", function () {
+            const tabId = this.getAttribute("data-tab");
+
+            // Hide all tab contents
+            contents.forEach(content => {
+                content.classList.remove("active");
+            });
+
+            // Show the selected tab
+            document.getElementById(tabId).classList.add("active");
+        });
     });
 });

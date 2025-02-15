@@ -4,15 +4,51 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Techsavvy</title>
+    <title>TechSavvy</title>
+    <style>
+        /* Hide all tab content by default */
+        .tab-content {
+            display: none;
+        }
+
+        /* Show the active tab */
+        .active {
+            display: block;
+        }
+    </style>
 </head>
 
 <body>
-    <h1>Techsavvy</h1>
-    <input type="text" id="search-box" placeholder="Search for topics or courses">
-    <button id="search-button">Search</button>
+    <h1>TechSavvy</h1>
 
-    <script src="script.js"></script> 
+    <!-- Navigation Tabs -->
+    <button class="tab-button" data-tab="home">Home</button>
+    <button class="tab-button" data-tab="achievements">Achievements</button>
+    <button class="tab-button" data-tab="settings">Settings</button>
+    <button class="tab-button" data-tab="dashboard">Dashboard</button>
+
+    <!-- Tab Content -->
+    <div id="home" class="tab-content active">
+        <h2>Home Page</h2>
+        <p>Welcome to TechSavvy!</p>
+    </div>
+
+    <div id="achievements" class="tab-content">
+        <h2>Achievements</h2>
+        <p>Your progress is shown here.</p>
+    </div>
+
+    <div id="settings" class="tab-content">
+        <h2>Settings</h2>
+        <p>Change your preferences here.</p>
+    </div>
+
+    <div id="dashboard" class="tab-content">
+        <h2>Dashboard</h2>
+        <p>View your analytics here.</p>
+    </div>
+
+    <script src="script.js"></script>
 </body>
 
 </html>
